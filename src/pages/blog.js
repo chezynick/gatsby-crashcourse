@@ -1,22 +1,25 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Link } from "gatsby"
+
 import Layout from "../components/layout"
 
 const BlogPage = ({ data }) => (
   <Layout>
     <div>
-      <h1>Latest Posts</h1>
+      <h1 className="text-2xl py-10">Latest Posts</h1>
       {data.allMarkdownRemark.edges.map(post => (
-        <div key={post.node.id}>
-          <h3>{post.node.frontmatter.title}</h3>
+        <div
+          className="border-2 border-gray-700 flex flex-col items-center justify-evenly mb-5"
+          key={post.node.id}
+        >
+          <h3 className="text-xl pt-5">{post.node.frontmatter.title}</h3>
           <small>
             Posted by {post.node.frontmatter.author} on{" "}
             {post.node.frontmatter.date}
           </small>
           <br />
           <br />
-          <Link to={post.node.frontmatter.path}>Read more</Link>
+          <div dangerouslySetInnerHTML={{ __html: post.node.html }} />
           <br />
           <br />
           <hr />
@@ -32,6 +35,7 @@ export const pageQuery = graphql`
       edges {
         node {
           id
+          html
           frontmatter {
             path
             title
