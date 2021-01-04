@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Wunderlust 2006-2020`,
     description: `basic travel blog utilising Gatsby and Tailwind.`,
-    author: `nick`,
+    author: `@gatsbyjs`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -12,8 +12,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `images`,
         path: `${__dirname}/src/images`,
-        name: "images",
       },
       options: {
         path: `${__dirname}/src/pages`,
