@@ -28,7 +28,7 @@ const BlogPage = ({ data }) => (
     </div>
   </Layout>
 )
-
+//query to bring in data using graphql creates an array node[id,html,[frontmatter[path,title,date.author]]
 export const pageQuery = graphql`
   query BlogIndexQuery {
     allMarkdownRemark {

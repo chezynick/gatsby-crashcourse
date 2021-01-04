@@ -11,7 +11,10 @@ module.exports = {
     "gatsby-plugin-postcss",
     {
       resolve: `gatsby-source-filesystem`,
-
+      options: {
+        path: `${__dirname}/src/images`,
+        name: "images",
+      },
       options: {
         path: `${__dirname}/src/pages`,
         name: "pages",
