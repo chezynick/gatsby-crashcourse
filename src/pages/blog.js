@@ -13,10 +13,10 @@ const BlogPage = ({ data }) => (
           key={post.node.id}
         >
           <h3 className="text-xl pt-5">{post.node.frontmatter.title}</h3>
-          <small>
+          <p className="text-sm">
             Posted by {post.node.frontmatter.author} on{" "}
             {post.node.frontmatter.date}
-          </small>
+          </p>
           <br />
           <br />
           <div dangerouslySetInnerHTML={{ __html: post.node.html }} />

@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <Nav />
-      <div className="w-full px-16 py-5 bg-blue-100 h-screen">
+      <div className="w-full px-16 py-5 bg-blue-100 h-auto">
         <main>{children}</main>
       </div>
       <Footer />
